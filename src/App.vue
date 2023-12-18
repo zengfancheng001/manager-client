@@ -2,12 +2,6 @@
 
 <template>
   <div class="app">
-    <h2>app</h2>
-    <el-button>Default</el-button>
-
-    <router-link to="main">main</router-link>
-    <router-link to="login">login</router-link>
-
     <router-view></router-view>
   </div>
 </template>
