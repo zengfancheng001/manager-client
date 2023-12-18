@@ -1,4 +1,6 @@
-import './assets/main.css'
+import 'normalize.css'
+import './assets/css/index.less'
+// import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

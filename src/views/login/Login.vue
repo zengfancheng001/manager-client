@@ -1,11 +1,11 @@
 <template>
   <div class="login">
-    <h2>login</h2>
+   <login-panel></login-panel>
   </div>
 </template>
 
 <script setup>
-
+import { loginPanel } from '../login/cpns/loginPanel'
 
 </script>
 
