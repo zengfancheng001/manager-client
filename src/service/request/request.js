@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL, TIMEOUT } from "../config/config";
+import { BASE_URL, TIME_OUT } from "../config/index";
 // import useMainStore from "@/stores/modules/main";
 
 // const mainStore = useMainStore();
@@ -13,7 +13,7 @@ class ZFCRequest {
 
     this.instance.interceptors.request.use(
       (config) => {
-        mainStore.isLoading = true;
+        // mainStore.isLoading = true;
         return config;
       },
       (err) => {
@@ -22,11 +22,11 @@ class ZFCRequest {
     );
     this.instance.interceptors.response.use(
       (res) => {
-        mainStore.isLoading = false;
+        // mainStore.isLoading = false;
         return res;
       },
       (err) => {
-        mainStore.isLoading = false;
+        // mainStore.isLoading = false;
         return err;
       }
     );
@@ -49,12 +49,14 @@ class ZFCRequest {
   }
 
   get(config) {
+
     return this.request({ ...config, method: "get" });
   }
 
   post(config) {
+    console.log("baseurl",BASE_URL);
     return this.request({ ...config, method: "post" });
   }
 }
 
-export default new ZFCRequest(BASE_URL, TIMEOUT);
+export default new ZFCRequest(BASE_URL, TIME_OUT);

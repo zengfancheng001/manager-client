@@ -7,3 +7,5 @@ if (import.meta.env.PROD) {
   // 开发环境
   BASE_URL = 'http://localhost:8000'
 }
+const TIME_OUT = 10000
+export { BASE_URL ,TIME_OUT }

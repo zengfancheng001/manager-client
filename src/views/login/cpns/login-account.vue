@@ -20,7 +20,7 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { ElMessage } from 'element-plus';
-import {loginRequest} from '../../../service/login/login';
+import { loginRequest } from '../../../service/login/login';
 
 // 1.定义响应式数据
 const account = reactive({
@@ -54,9 +54,10 @@ function loginAction() {
       const name = account.name
       const password = account.password
       // 向服务器发送网络请求（携带用户名和密码）
-      loginRequest(account).then((res) => {
-        console.log(res);
+      loginRequest({name,password}).then((res) => {
+        console.log("服务器返回",res);
       })
+      account
     } else {
       ElMessage.error('Oops,验证失败，请输入正确的格式后再试')
     }
