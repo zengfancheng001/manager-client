@@ -8,7 +8,7 @@
 
 <style scoped>
 .app {
-  background-color: gray;
+  /* background-color: gray; */
   width: 100vw;
   height: 100vh;
 }
