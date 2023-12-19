@@ -1,6 +1,6 @@
 <template>
   <div class="login-panel">
-    <h1 class="title">后台管理系统</h1>
+    <h1 class="title">综合后台管理系统</h1>
     <el-tabs type="border-card" stretch v-model="activeName">
       <el-tab-pane name="account">
       <!-- 标签插槽，固定格式 -->
@@ -9,7 +9,7 @@
             <el-icon><UserFilled /></el-icon> 帐号登录
           </span> 
         </template>
-        <login-accout></login-accout>
+        <login-accout ref="accountRef" ></login-accout>
       </el-tab-pane>
       <el-tab-pane name="phone">
         <template #label>
@@ -35,10 +35,11 @@ import { ref } from'vue'
 import LoginAccout from "./login-account.vue";
 
 const activeName = ref('account')
+const accountRef = ref()
 
 function handleLoginBtnClick() {
   if (activeName.value === "account") {
-    console.log('账号登录');
+    accountRef.value.loginAction()
   } else {
     console.log('手机登录');
   }
